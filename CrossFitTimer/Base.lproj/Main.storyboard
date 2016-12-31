@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Ubuntu-Bold.ttf">
+            <string>Ubuntu-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fau-Yf-LbA">
+                                <rect key="frame" x="0.0" y="30" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cik-IL-e88"/>
+                                </constraints>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Cross-Fit Timer" id="a8F-Mm-u82"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
+                                <rect key="frame" x="0.0" y="74" width="375" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="Oby-F3-Wcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="flr-KU-Hgu">
+                                <rect key="frame" x="0.0" y="261" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="406" id="pwS-64-eCQ"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="sLY-Mh-ag6">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sLY-Mh-ag6" id="K7Q-qf-zSJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="CBF-lI-Hmd"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QGq-v5-1DI"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y3Q-nm-s9w">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" systemItem="play" id="bKw-p4-eQu">
+                                        <connections>
+                                            <action selector="startStopButton:" destination="BYZ-38-t0r" id="xLh-BL-yoy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vQO-yl-th4"/>
+                                    <barButtonItem systemItem="refresh" id="8iz-WA-gDd">
+                                        <connections>
+                                            <action selector="lapRefreshButton:" destination="BYZ-38-t0r" id="d4V-lk-ctu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Fau-Yf-LbA" secondAttribute="trailing" id="9Tp-1b-XO1"/>
+                            <constraint firstItem="Fau-Yf-LbA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LVK-0N-2xZ"/>
+                            <constraint firstAttribute="trailing" secondItem="jOP-kG-cES" secondAttribute="trailing" id="QnU-IS-3dm"/>
+                            <constraint firstItem="flr-KU-Hgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ww9-KN-WDo"/>
+                            <constraint firstItem="Fau-Yf-LbA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cdn-Mf-8dA"/>
+                            <constraint firstItem="jOP-kG-cES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="em7-qJ-Sbe"/>
+                            <constraint firstItem="jOP-kG-cES" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="hYz-db-lim"/>
+                            <constraint firstItem="flr-KU-Hgu" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="8" id="iui-6d-8UU"/>
+                            <constraint firstAttribute="trailing" secondItem="flr-KU-Hgu" secondAttribute="trailing" id="xLB-wH-F8c"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lapResetButton" destination="8iz-WA-gDd" id="uVj-YC-H2j"/>
+                        <outlet property="lapsTableView" destination="flr-KU-Hgu" id="HcX-at-TsI"/>
+                        <outlet property="startStopButton" destination="bKw-p4-eQu" id="1oj-Pg-kSf"/>
+                        <outlet property="stopWatchLabel" destination="jOP-kG-cES" id="zGD-Qn-hGc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
