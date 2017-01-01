@@ -14,6 +14,8 @@
 		73C8D5AB1E18463500C8EB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A91E18463500C8EB4C /* LaunchScreen.storyboard */; };
 		73C8D5BD1E18F10400C8EB4C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5BC1E18F10400C8EB4C /* close.png */; };
 		73C8D5BF1E18F52C00C8EB4C /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5BE1E18F52C00C8EB4C /* play.png */; };
+		73C8D5C11E1968C900C8EB4C /* timers.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5C01E1968C900C8EB4C /* timers.png */; };
+		73C8D5C31E19692800C8EB4C /* timers1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5C21E19692800C8EB4C /* timers1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		73C8D5B91E18474800C8EB4C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		73C8D5BC1E18F10400C8EB4C /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		73C8D5BE1E18F52C00C8EB4C /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		73C8D5C01E1968C900C8EB4C /* timers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timers.png; sourceTree = "<group>"; };
+		73C8D5C21E19692800C8EB4C /* timers1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timers1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				73C8D5BC1E18F10400C8EB4C /* close.png */,
+				73C8D5C01E1968C900C8EB4C /* timers.png */,
+				73C8D5C21E19692800C8EB4C /* timers1.png */,
 				73C8D5BE1E18F52C00C8EB4C /* play.png */,
 			);
 			name = button_images;
@@ -159,6 +165,8 @@
 				73C8D5A81E18463500C8EB4C /* Assets.xcassets in Resources */,
 				73C8D5BD1E18F10400C8EB4C /* close.png in Resources */,
 				73C8D5A61E18463500C8EB4C /* Main.storyboard in Resources */,
+				73C8D5C31E19692800C8EB4C /* timers1.png in Resources */,
+				73C8D5C11E1968C900C8EB4C /* timers.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

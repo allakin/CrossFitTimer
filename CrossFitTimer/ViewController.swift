@@ -39,11 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
 			startStopButton.image = UIImage(named: "close.png")
+			lapResetButton.image = UIImage(named: "timers1.png")
 			addLap = true
 		} else {
 			startStopWatch = true
 			timer.invalidate()
 			startStopButton.image = UIImage(named: "play.png")
+			lapResetButton.image = UIImage(named: "timers.png")
 		}
 		
 	}

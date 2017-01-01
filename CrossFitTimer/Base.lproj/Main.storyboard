@@ -77,7 +77,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vQO-yl-th4"/>
-                                    <barButtonItem systemItem="refresh" id="8iz-WA-gDd">
+                                    <barButtonItem image="timers1.png" id="8iz-WA-gDd">
                                         <connections>
                                             <action selector="lapRefreshButton:" destination="BYZ-38-t0r" id="d4V-lk-ctu"/>
                                         </connections>
@@ -112,5 +112,6 @@
     </scenes>
     <resources>
         <image name="play.png" width="50" height="50"/>
+        <image name="timers1.png" width="50" height="50"/>
     </resources>
 </document>
