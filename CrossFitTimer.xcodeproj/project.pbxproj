@@ -12,6 +12,8 @@
 		73C8D5A61E18463500C8EB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A41E18463500C8EB4C /* Main.storyboard */; };
 		73C8D5A81E18463500C8EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A71E18463500C8EB4C /* Assets.xcassets */; };
 		73C8D5AB1E18463500C8EB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A91E18463500C8EB4C /* LaunchScreen.storyboard */; };
+		73C8D5BD1E18F10400C8EB4C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5BC1E18F10400C8EB4C /* close.png */; };
+		73C8D5BF1E18F52C00C8EB4C /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5BE1E18F52C00C8EB4C /* play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		73C8D5B51E18474800C8EB4C /* Ubuntu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Light.ttf"; sourceTree = "<group>"; };
 		73C8D5B71E18474800C8EB4C /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
 		73C8D5B91E18474800C8EB4C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
+		73C8D5BC1E18F10400C8EB4C /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		73C8D5BE1E18F52C00C8EB4C /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		73C8D5BB1E18499A00C8EB4C /* button_images */ = {
 			isa = PBXGroup;
 			children = (
+				73C8D5BC1E18F10400C8EB4C /* close.png */,
+				73C8D5BE1E18F52C00C8EB4C /* play.png */,
 			);
 			name = button_images;
 			sourceTree = "<group>";
@@ -149,7 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C8D5AB1E18463500C8EB4C /* LaunchScreen.storyboard in Resources */,
+				73C8D5BF1E18F52C00C8EB4C /* play.png in Resources */,
 				73C8D5A81E18463500C8EB4C /* Assets.xcassets in Resources */,
+				73C8D5BD1E18F10400C8EB4C /* close.png in Resources */,
 				73C8D5A61E18463500C8EB4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

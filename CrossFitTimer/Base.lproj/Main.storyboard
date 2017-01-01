@@ -71,7 +71,7 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" systemItem="play" id="bKw-p4-eQu">
+                                    <barButtonItem image="play.png" id="bKw-p4-eQu">
                                         <connections>
                                             <action selector="startStopButton:" destination="BYZ-38-t0r" id="xLh-BL-yoy"/>
                                         </connections>
@@ -110,4 +110,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.png" width="50" height="50"/>
+    </resources>
 </document>
