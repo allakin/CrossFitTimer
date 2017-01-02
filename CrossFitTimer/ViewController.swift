@@ -31,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		view.backgroundColor = UIColor.yellowBGColor
 		stopWatchLabel.textColor = UIColor.yellowTextColor
 		lapsTableView.backgroundColor = UIColor.yellowBGColor
+		lapResetButton.isEnabled = false
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -46,6 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			startStopButton.image = UIImage(named: "close.png")
 			lapResetButton.image = UIImage(named: "timers1.png")
 			addLap = true
+			lapResetButton.isEnabled = true
 			view.backgroundColor = UIColor.greenBGColor
 			stopWatchLabel.textColor = UIColor.greenTextColor
 			lapsTableView.backgroundColor = UIColor.greenBGColor
@@ -53,6 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
+			lapResetButton.isEnabled = true
 			startStopButton.image = UIImage(named: "play.png")
 			lapResetButton.image = UIImage(named: "timers.png")
 			view.backgroundColor = UIColor.redBGColor
@@ -67,13 +70,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapsTableView.reloadData()
 		} else {
 			addLap = false
-			lapResetButton.image = UIImage(named: "timers.png")
+			lapResetButton.image = UIImage(named: "timers1.png")
 			laps.removeAll()
 			lapsTableView.reloadData()
 			fractions = 0
 			seconds = 0
 			minutes = 0
 			stopWatchString = "00:00:00"
+			lapResetButton.isEnabled = false
 			stopWatchLabel.text = stopWatchString
 			view.backgroundColor = UIColor.yellowBGColor
 			stopWatchLabel.textColor = UIColor.yellowTextColor
