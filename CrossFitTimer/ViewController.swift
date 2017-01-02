@@ -46,19 +46,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		if startStopWatch == true {
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
-			startStopButton.image = UIImage(named: "close.png")
-			lapResetButton.image = UIImage(named: "timers1.png")
+			startStopButton.image = UIImage(named: "stop_timer.png")
+			lapResetButton.image = UIImage(named: "new_laps.png")
 			addLap = true
 			lapResetButton.isEnabled = true
-			laps.removeAll()
 			green()
 		} else {
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
 			lapResetButton.isEnabled = true
-			startStopButton.image = UIImage(named: "play.png")
-			lapResetButton.image = UIImage(named: "timers.png")
+			startStopButton.image = UIImage(named: "start_timer.png")
+			lapResetButton.image = UIImage(named: "remove_all.png")
 			red()
 		}
 	}
@@ -76,7 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapsTableView.reloadData()
 		} else {
 			addLap = false
-			lapResetButton.image = UIImage(named: "timers1.png")
+			lapResetButton.image = UIImage(named: "new_laps.png")
 			laps.removeAll()
 			lapsTableView.reloadData()
 			fractions = 0
@@ -120,7 +119,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			timer.invalidate()
 			yellow()
 			lapResetButton.isEnabled = false
-			startStopButton.image = UIImage(named: "play.png")
+			startStopButton.image = UIImage(named: "start_timer.png")
 			alertController()
 		}
 		
