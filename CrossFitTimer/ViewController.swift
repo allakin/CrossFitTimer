@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	@IBOutlet weak var lapsTableView: UITableView!
@@ -27,6 +28,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		stopWatchLabel.text = "00:00:00"
+		view.backgroundColor = UIColor.yellowBGColor
+		stopWatchLabel.textColor = UIColor.yellowTextColor
+		lapsTableView.backgroundColor = UIColor.yellowBGColor
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -42,12 +46,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			startStopButton.image = UIImage(named: "close.png")
 			lapResetButton.image = UIImage(named: "timers1.png")
 			addLap = true
+			view.backgroundColor = UIColor.greenBGColor
+			stopWatchLabel.textColor = UIColor.greenTextColor
+			lapsTableView.backgroundColor = UIColor.greenBGColor
 		} else {
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
 			startStopButton.image = UIImage(named: "play.png")
 			lapResetButton.image = UIImage(named: "timers.png")
+			view.backgroundColor = UIColor.redBGColor
+			stopWatchLabel.textColor = UIColor.redTextColor
+			lapsTableView.backgroundColor = UIColor.redBGColor
 		}
 	}
 	
@@ -65,6 +75,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			minutes = 0
 			stopWatchString = "00:00:00"
 			stopWatchLabel.text = stopWatchString
+			view.backgroundColor = UIColor.yellowBGColor
+			stopWatchLabel.textColor = UIColor.yellowTextColor
+			lapsTableView.backgroundColor = UIColor.yellowBGColor
 		}
 	}
 
@@ -97,7 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
-		cell.textLabel?.text = "Lap \(indexPath.row)"
+		cell.textLabel?.text = "Lap \(laps.count-indexPath.row)"
 		cell.detailTextLabel?.text = laps[indexPath.row]
 		return cell
 	}

@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Ubuntu-Bold.ttf">
-            <string>Ubuntu-Bold</string>
+        <array key="Ubuntu-Medium.ttf">
+            <string>Ubuntu-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -37,15 +37,6 @@
                                     <navigationItem title="Cross-Fit Timer" id="a8F-Mm-u82"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
-                                <rect key="frame" x="0.0" y="74" width="375" height="179"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="Oby-F3-Wcf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="70"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="flr-KU-Hgu">
                                 <rect key="frame" x="0.0" y="261" width="375" height="406"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -84,15 +75,24 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
+                                <rect key="frame" x="-11" y="74" width="396" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="Oby-F3-Wcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="70"/>
+                                <color key="textColor" red="1" green="0.467570260067114" blue="0.45621854026845637" alpha="0.75748922413793107" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Fau-Yf-LbA" secondAttribute="trailing" id="9Tp-1b-XO1"/>
                             <constraint firstItem="Fau-Yf-LbA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LVK-0N-2xZ"/>
-                            <constraint firstAttribute="trailing" secondItem="jOP-kG-cES" secondAttribute="trailing" id="QnU-IS-3dm"/>
+                            <constraint firstAttribute="trailing" secondItem="jOP-kG-cES" secondAttribute="trailing" constant="-10" id="QnU-IS-3dm"/>
                             <constraint firstItem="flr-KU-Hgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ww9-KN-WDo"/>
                             <constraint firstItem="Fau-Yf-LbA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cdn-Mf-8dA"/>
-                            <constraint firstItem="jOP-kG-cES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="em7-qJ-Sbe"/>
+                            <constraint firstItem="jOP-kG-cES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-11" id="em7-qJ-Sbe"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="hYz-db-lim"/>
                             <constraint firstItem="flr-KU-Hgu" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="8" id="iui-6d-8UU"/>
                             <constraint firstAttribute="trailing" secondItem="flr-KU-Hgu" secondAttribute="trailing" id="xLB-wH-F8c"/>
