@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		// Dispose of any resources that can be recreated.
 	}
 	
+	//MARK: - startStopButton
 	@IBAction func startStopButton(_ sender: Any) {
 		
 		if startStopWatch == true {
@@ -61,7 +62,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			red()
 		}
 	}
+	//end startStopButton
 	
+	//MARK: - lapRefreshButton
 	@IBAction func lapRefreshButton(_ sender: Any) {
 		if addLap == true {
 			laps.insert(stopWatchString, at: 0)
@@ -85,7 +88,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			yellow()
 		}
 	}
+	//end lapRefreshButton
 	
+	//MARK: - func updateStopWatch
 	func updateStopWatch() {
 		fractions += 1
 		if fractions == 100 {
@@ -127,7 +132,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		stopWatchLabel.text = stopWatchString
 		
 	}
+	//end func updateStopWatch
 	
+	//MARK: - Color
 	func yellow(){
 		view.backgroundColor = UIColor.yellowBGColor
 		stopWatchLabel.textColor = UIColor.yellowTextColor
@@ -147,13 +154,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		lapsTableView.backgroundColor = UIColor.redBGColor
 		lapsTableView.separatorColor = UIColor.redTextColor
 	}
+	//end Color
 	
+	//MARK: - Alert
 	func alertController() {
 		let alert = UIAlertController(title: "Поздравляю", message: "Тренировка законченна", preferredStyle: .alert)
 		let actionButton = UIAlertAction(title: "Я справился!", style: .default, handler: nil)
 		alert.addAction(actionButton)
 		present(alert, animated: true, completion: nil)
 	}
+	//end Alert
 	
 	//MARK: - Table View Methods
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -166,7 +176,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		cell.detailTextLabel?.text = laps[indexPath.row]
 		return cell
 	}
-	
+	//end Table View Methods
 	
 }
 
