@@ -9,13 +9,12 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	@IBOutlet weak var lapsTableView: UITableView!
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
-	@IBOutlet weak var toolBarOutlet: Toolbar!
 	@IBOutlet weak var raundLabel: UILabel!
 	
 	var laps: [String] = []
@@ -26,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	var startStopWatch: Bool = true
 	var addLap: Bool = false
 	var stopWatchString: String = ""
-	var round: Int = 0
+	var round: Int = 1
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -104,15 +103,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			laps.insert(stopWatchString, at: 0)
 			lapsTableView.reloadData()
 			raundLabel.text = "Раунд: \(round)/8"
-		} else if round == 8 {
+		} else if round == 9 {
+			raundLabel.text = "Тренировка оконченна"
 			fractions = 0
 			seconds = 0
 			minutes = 0
-			round = 0
+			round = 1
 			timer.invalidate()
 			yellow()
 			lapResetButton.isEnabled = false
 			startStopButton.image = UIImage(named: "play.png")
+			alertController()
 		}
 	
 		let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
@@ -129,14 +130,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		stopWatchLabel.textColor = UIColor.yellowTextColor
 		lapsTableView.backgroundColor = UIColor.yellowBGColor
 		lapsTableView.separatorColor = UIColor.yellowTextColor
-		toolBarOutlet.backgroundColor = UIColor.yellowBGColor
 	}
 	func green()   {
 		view.backgroundColor = UIColor.greenBGColor
 		stopWatchLabel.textColor = UIColor.greenTextColor
 		lapsTableView.backgroundColor = UIColor.greenBGColor
 		lapsTableView.separatorColor = UIColor.greenTextColor
-		toolBarOutlet.backgroundColor = UIColor.greenBGColor
 	}
 	
 	func red(){
@@ -144,7 +143,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		stopWatchLabel.textColor = UIColor.redTextColor
 		lapsTableView.backgroundColor = UIColor.redBGColor
 		lapsTableView.separatorColor = UIColor.redTextColor
-		toolBarOutlet.backgroundColor = UIColor.redBGColor
+	}
+	
+	func alertController() {
+		let alert = UIAlertController(title: "Поздравляю", message: "Тренировка законченна", preferredStyle: .alert)
+		let actionButton = UIAlertAction(title: "Я справился!", style: .default, handler: nil)
+		alert.addAction(actionButton)
+		present(alert, animated: true, completion: nil)
 	}
 	
 	//MARK: - Table View Methods

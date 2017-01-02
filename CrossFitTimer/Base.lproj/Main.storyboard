@@ -90,7 +90,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Раунд: 0/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGM-jB-KcW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Раунд: 1/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGM-jB-KcW">
                                 <rect key="frame" x="16" y="94" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="CIS-jc-s2u"/>
@@ -134,7 +134,6 @@
                         <outlet property="raundLabel" destination="PGM-jB-KcW" id="HB9-eT-6mp"/>
                         <outlet property="startStopButton" destination="bKw-p4-eQu" id="1oj-Pg-kSf"/>
                         <outlet property="stopWatchLabel" destination="jOP-kG-cES" id="zGD-Qn-hGc"/>
-                        <outlet property="toolBarOutlet" destination="y3Q-nm-s9w" id="aM4-Ud-pSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

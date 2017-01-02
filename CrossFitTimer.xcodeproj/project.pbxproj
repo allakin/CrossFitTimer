@@ -17,7 +17,6 @@
 		73C8D5C11E1968C900C8EB4C /* timers.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5C01E1968C900C8EB4C /* timers.png */; };
 		73C8D5C31E19692800C8EB4C /* timers1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5C21E19692800C8EB4C /* timers1.png */; };
 		73C8D5C51E1A647700C8EB4C /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */; };
-		73C8D5C91E1A9AAE00C8EB4C /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8D5C81E1A9AAE00C8EB4C /* Toolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		73C8D5C01E1968C900C8EB4C /* timers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timers.png; sourceTree = "<group>"; };
 		73C8D5C21E19692800C8EB4C /* timers1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timers1.png; sourceTree = "<group>"; };
 		73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
-		73C8D5C81E1A9AAE00C8EB4C /* Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,6 @@
 				73C8D5BB1E18499A00C8EB4C /* button_images */,
 				73C8D5BA1E18475000C8EB4C /* fonts */,
 				73C8D5A01E18463500C8EB4C /* AppDelegate.swift */,
-				73C8D5C81E1A9AAE00C8EB4C /* Toolbar.swift */,
 				73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */,
 				73C8D5A21E18463500C8EB4C /* ViewController.swift */,
 				73C8D5A41E18463500C8EB4C /* Main.storyboard */,
@@ -186,7 +183,6 @@
 				73C8D5A31E18463500C8EB4C /* ViewController.swift in Sources */,
 				73C8D5A11E18463500C8EB4C /* AppDelegate.swift in Sources */,
 				73C8D5C51E1A647700C8EB4C /* ColorPalette.swift in Sources */,
-				73C8D5C91E1A9AAE00C8EB4C /* Toolbar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
