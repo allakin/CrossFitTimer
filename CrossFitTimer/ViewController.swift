@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
 	@IBOutlet weak var toolBarOutlet: Toolbar!
+	@IBOutlet weak var raundLabel: UILabel!
 	
 	var laps: [String] = []
 	var timer = Timer()
@@ -25,6 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	var startStopWatch: Bool = true
 	var addLap: Bool = false
 	var stopWatchString: String = ""
+	var round: Int = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -62,6 +64,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBAction func lapRefreshButton(_ sender: Any) {
 		if addLap == true {
 			laps.insert(stopWatchString, at: 0)
+			fractions = 0
+			seconds = 0
+			minutes = 0
+			round += 1
+			raundLabel.text = "Раунд: \(round)/8"
 			lapsTableView.reloadData()
 		} else {
 			addLap = false
@@ -89,6 +96,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		} else if seconds == 60 {
 			minutes += 1
 			seconds = 0
+		} else if minutes == 0 && seconds == 10{
+			fractions = 0
+			seconds = 0
+			minutes = 0
+			round += 1
+			laps.insert(stopWatchString, at: 0)
+			lapsTableView.reloadData()
+			raundLabel.text = "Раунд: \(round)/8"
+		} else if round == 8 {
+			fractions = 0
+			seconds = 0
+			minutes = 0
+			round = 0
+			timer.invalidate()
+			yellow()
+			lapResetButton.isEnabled = false
+			startStopButton.image = UIImage(named: "play.png")
 		}
 	
 		let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
@@ -130,7 +154,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
-		cell.textLabel?.text = "Lap \(laps.count-indexPath.row)"
+		cell.textLabel?.text = "Время \(laps.count - indexPath.row) раунда"
 		cell.detailTextLabel?.text = laps[indexPath.row]
 		return cell
 	}

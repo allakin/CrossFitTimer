@@ -6,11 +6,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Ubuntu-Medium.ttf">
             <string>Ubuntu-Medium</string>
+        </array>
+        <array key="Ubuntu-Regular.ttf">
+            <string>Ubuntu</string>
         </array>
     </customFonts>
     <scenes>
@@ -37,6 +41,15 @@
                                     <navigationItem title="Cross-Fit Timer" id="a8F-Mm-u82"/>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
+                                <rect key="frame" x="-11" y="74" width="396" height="179"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="Oby-F3-Wcf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="70"/>
+                                <color key="textColor" red="1" green="0.467570260067114" blue="0.45621854026845637" alpha="0.75748922413793107" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="flr-KU-Hgu">
                                 <rect key="frame" x="0.0" y="261" width="375" height="406"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,32 +90,48 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
-                                <rect key="frame" x="-11" y="74" width="396" height="179"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Раунд: 0/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGM-jB-KcW">
+                                <rect key="frame" x="16" y="94" width="343" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="Oby-F3-Wcf"/>
+                                    <constraint firstAttribute="height" constant="20" id="CIS-jc-s2u"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="70"/>
-                                <color key="textColor" red="1" green="0.467570260067114" blue="0.45621854026845637" alpha="0.75748922413793107" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-0L-vD2">
+                                <rect key="frame" x="16" y="214" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="QPi-mz-24Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PGM-jB-KcW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="60L-eY-cov"/>
                             <constraint firstAttribute="trailing" secondItem="Fau-Yf-LbA" secondAttribute="trailing" id="9Tp-1b-XO1"/>
+                            <constraint firstItem="8FF-0L-vD2" firstAttribute="top" secondItem="PGM-jB-KcW" secondAttribute="bottom" constant="100" id="DLY-Cr-GPp"/>
                             <constraint firstItem="Fau-Yf-LbA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LVK-0N-2xZ"/>
                             <constraint firstAttribute="trailing" secondItem="jOP-kG-cES" secondAttribute="trailing" constant="-10" id="QnU-IS-3dm"/>
                             <constraint firstItem="flr-KU-Hgu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ww9-KN-WDo"/>
+                            <constraint firstItem="8FF-0L-vD2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XRl-3G-Ukc"/>
                             <constraint firstItem="Fau-Yf-LbA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cdn-Mf-8dA"/>
+                            <constraint firstItem="8FF-0L-vD2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dQ0-Of-yBJ"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-11" id="em7-qJ-Sbe"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="54" id="hYz-db-lim"/>
                             <constraint firstItem="flr-KU-Hgu" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="8" id="iui-6d-8UU"/>
+                            <constraint firstItem="PGM-jB-KcW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jgC-6i-uCB"/>
+                            <constraint firstItem="PGM-jB-KcW" firstAttribute="top" secondItem="Fau-Yf-LbA" secondAttribute="bottom" constant="20" id="l3u-Pk-lUY"/>
                             <constraint firstAttribute="trailing" secondItem="flr-KU-Hgu" secondAttribute="trailing" id="xLB-wH-F8c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="lapResetButton" destination="8iz-WA-gDd" id="uVj-YC-H2j"/>
                         <outlet property="lapsTableView" destination="flr-KU-Hgu" id="HcX-at-TsI"/>
+                        <outlet property="raundLabel" destination="PGM-jB-KcW" id="HB9-eT-6mp"/>
                         <outlet property="startStopButton" destination="bKw-p4-eQu" id="1oj-Pg-kSf"/>
                         <outlet property="stopWatchLabel" destination="jOP-kG-cES" id="zGD-Qn-hGc"/>
                         <outlet property="toolBarOutlet" destination="y3Q-nm-s9w" id="aM4-Ud-pSB"/>
