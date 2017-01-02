@@ -28,9 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		stopWatchLabel.text = "00:00:00"
-		view.backgroundColor = UIColor.yellowBGColor
-		stopWatchLabel.textColor = UIColor.yellowTextColor
-		lapsTableView.backgroundColor = UIColor.yellowBGColor
+		yellow()
 		lapResetButton.isEnabled = false
 	}
 
@@ -48,9 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapResetButton.image = UIImage(named: "timers1.png")
 			addLap = true
 			lapResetButton.isEnabled = true
-			view.backgroundColor = UIColor.greenBGColor
-			stopWatchLabel.textColor = UIColor.greenTextColor
-			lapsTableView.backgroundColor = UIColor.greenBGColor
+			green()
 		} else {
 			startStopWatch = true
 			addLap = false
@@ -58,9 +54,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapResetButton.isEnabled = true
 			startStopButton.image = UIImage(named: "play.png")
 			lapResetButton.image = UIImage(named: "timers.png")
-			view.backgroundColor = UIColor.redBGColor
-			stopWatchLabel.textColor = UIColor.redTextColor
-			lapsTableView.backgroundColor = UIColor.redBGColor
+			red()
 		}
 	}
 	
@@ -79,9 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			stopWatchString = "00:00:00"
 			lapResetButton.isEnabled = false
 			stopWatchLabel.text = stopWatchString
-			view.backgroundColor = UIColor.yellowBGColor
-			stopWatchLabel.textColor = UIColor.yellowTextColor
-			lapsTableView.backgroundColor = UIColor.yellowBGColor
+			yellow()
 		}
 	}
 
@@ -105,6 +97,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		stopWatchString = "\(minutesString):\(secondString):\(fractionsString)"
 		stopWatchLabel.text = stopWatchString
 		
+	}
+	
+	func yellow() {
+		view.backgroundColor = UIColor.yellowBGColor
+		stopWatchLabel.textColor = UIColor.yellowTextColor
+		lapsTableView.backgroundColor = UIColor.yellowBGColor
+	}
+	func green()   {
+		view.backgroundColor = UIColor.greenBGColor
+		stopWatchLabel.textColor = UIColor.greenTextColor
+		lapsTableView.backgroundColor = UIColor.greenBGColor
+		//self.navigationController?.toolbar.barTintColor = UIColor.greenBGColor
+	}
+	
+	func red(){
+		view.backgroundColor = UIColor.redBGColor
+		stopWatchLabel.textColor = UIColor.redTextColor
+		lapsTableView.backgroundColor = UIColor.redBGColor
+		//self.navigationController?.toolbar.barTintColor = UIColor.redBGColor
 	}
 	
 	//MARK: - Table View Methods
