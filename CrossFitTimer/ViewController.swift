@@ -15,7 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBOutlet weak var lapsTableView: UITableView!
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
-
+	@IBOutlet weak var toolBarOutlet: Toolbar!
+	
 	var laps: [String] = []
 	var timer = Timer()
 	var minutes: Int = 0
@@ -103,19 +104,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		view.backgroundColor = UIColor.yellowBGColor
 		stopWatchLabel.textColor = UIColor.yellowTextColor
 		lapsTableView.backgroundColor = UIColor.yellowBGColor
+		lapsTableView.separatorColor = UIColor.yellowTextColor
+		toolBarOutlet.backgroundColor = UIColor.yellowBGColor
 	}
 	func green()   {
 		view.backgroundColor = UIColor.greenBGColor
 		stopWatchLabel.textColor = UIColor.greenTextColor
 		lapsTableView.backgroundColor = UIColor.greenBGColor
-		//self.navigationController?.toolbar.barTintColor = UIColor.greenBGColor
+		lapsTableView.separatorColor = UIColor.greenTextColor
+		toolBarOutlet.backgroundColor = UIColor.greenBGColor
 	}
 	
 	func red(){
 		view.backgroundColor = UIColor.redBGColor
 		stopWatchLabel.textColor = UIColor.redTextColor
 		lapsTableView.backgroundColor = UIColor.redBGColor
-		//self.navigationController?.toolbar.barTintColor = UIColor.redBGColor
+		lapsTableView.separatorColor = UIColor.redTextColor
+		toolBarOutlet.backgroundColor = UIColor.redBGColor
 	}
 	
 	//MARK: - Table View Methods

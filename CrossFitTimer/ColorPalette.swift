@@ -20,12 +20,12 @@ extension UIColor {
 		return UIColor(colorLiteralRed: 194/255, green: 241/255, blue: 147/255, alpha: 1) //зеленый фоновый
 	}
 	open class var greenTextColor: UIColor{
-		return UIColor(colorLiteralRed: 159/255, green: 212/255, blue: 105/255, alpha: 1) //зеленый для текста
+		return UIColor(colorLiteralRed: 135/255, green: 210/255, blue: 108/255, alpha: 1) //зеленый для текста
 	}
 	open class var redBGColor: UIColor{
 		return UIColor(colorLiteralRed: 243/255, green: 150/255, blue: 150/255, alpha: 1) //красный для фона
 	}
 	open class var redTextColor: UIColor{
-		return UIColor(colorLiteralRed: 220/255, green: 125/255, blue: 123/255, alpha: 1) //красный для текста
+		return UIColor(colorLiteralRed: 222/255, green: 82/255, blue: 82/255, alpha: 1) //красный для текста
 	}
 }
