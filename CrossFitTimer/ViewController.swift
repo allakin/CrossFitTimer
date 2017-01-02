@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
 
+	var laps: [String] = []
 	var timer = Timer()
 	var minutes: Int = 0
 	var seconds: Int = 0
@@ -43,13 +44,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			addLap = true
 		} else {
 			startStopWatch = true
+			addLap = false
 			timer.invalidate()
 			startStopButton.image = UIImage(named: "play.png")
 			lapResetButton.image = UIImage(named: "timers.png")
 		}
-		
 	}
+	
 	@IBAction func lapRefreshButton(_ sender: Any) {
+		if addLap == true {
+			laps.insert(stopWatchString, at: 0)
+			lapsTableView.reloadData()
+		} else {
+			addLap = false
+			lapResetButton.image = UIImage(named: "timers.png")
+			laps.removeAll()
+			lapsTableView.reloadData()
+			fractions = 0
+			seconds = 0
+			minutes = 0
+			stopWatchString = "00:00:00"
+			stopWatchLabel.text = stopWatchString
+		}
 	}
 
 	func updateStopWatch() {
@@ -76,19 +92,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	//MARK: - Table View Methods
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-	return 3
+	return laps.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
-		cell.textLabel?.text = "Lap"
-		cell.detailTextLabel?.text = "00:00:00"
+		cell.textLabel?.text = "Lap \(indexPath.row)"
+		cell.detailTextLabel?.text = laps[indexPath.row]
 		return cell
 	}
 	
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
-	}
 	
 }
 
