@@ -10,12 +10,13 @@ import UIKit
 import Foundation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+	
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	@IBOutlet weak var lapsTableView: UITableView!
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
 	@IBOutlet weak var raundLabel: UILabel!
+	@IBOutlet weak var subTittleLabel: UILabel!
 	
 	var laps: [String] = []
 	var timer = Timer()
@@ -33,12 +34,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		yellow()
 		lapResetButton.isEnabled = false
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-
+	
 	@IBAction func startStopButton(_ sender: Any) {
 		
 		if startStopWatch == true {
@@ -48,6 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapResetButton.image = UIImage(named: "timers1.png")
 			addLap = true
 			lapResetButton.isEnabled = true
+			laps.removeAll()
 			green()
 		} else {
 			startStopWatch = true
@@ -83,7 +85,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			yellow()
 		}
 	}
-
+	
 	func updateStopWatch() {
 		fractions += 1
 		if fractions == 100 {
@@ -104,7 +106,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			lapsTableView.reloadData()
 			raundLabel.text = "Раунд: \(round)/8"
 		} else if round == 9 {
-			raundLabel.text = "Тренировка оконченна"
+			raundLabel.text = "Раунд: 8/8"
+			subTittleLabel.text = "Тренировка завершенна"
 			fractions = 0
 			seconds = 0
 			minutes = 0
@@ -115,7 +118,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			startStopButton.image = UIImage(named: "play.png")
 			alertController()
 		}
-	
+		
 		let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
 		let secondString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
 		let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
@@ -125,13 +128,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		
 	}
 	
-	func yellow() {
+	func yellow(){
 		view.backgroundColor = UIColor.yellowBGColor
 		stopWatchLabel.textColor = UIColor.yellowTextColor
 		lapsTableView.backgroundColor = UIColor.yellowBGColor
 		lapsTableView.separatorColor = UIColor.yellowTextColor
 	}
-	func green()   {
+	func green(){
 		view.backgroundColor = UIColor.greenBGColor
 		stopWatchLabel.textColor = UIColor.greenTextColor
 		lapsTableView.backgroundColor = UIColor.greenBGColor
@@ -154,7 +157,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	
 	//MARK: - Table View Methods
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-	return laps.count
+		return laps.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

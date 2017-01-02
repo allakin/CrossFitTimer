@@ -134,6 +134,7 @@
                         <outlet property="raundLabel" destination="PGM-jB-KcW" id="HB9-eT-6mp"/>
                         <outlet property="startStopButton" destination="bKw-p4-eQu" id="1oj-Pg-kSf"/>
                         <outlet property="stopWatchLabel" destination="jOP-kG-cES" id="zGD-Qn-hGc"/>
+                        <outlet property="subTittleLabel" destination="8FF-0L-vD2" id="1kZ-5y-bSu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
