@@ -19,8 +19,8 @@ class ViewController: UIViewController {
 	weak var delegate: ViewControllerDelegate?
 	
 	@IBOutlet weak var stopWatchLabel: UILabel!
-	@IBOutlet weak var startStopButton: UIBarButtonItem!
-	@IBOutlet weak var lapResetButton: UIBarButtonItem!
+	@IBOutlet weak var startStopButton: UIButton!
+	@IBOutlet weak var lapResetButton: UIButton!
 	@IBOutlet weak var raundLabel: UILabel!
 	@IBOutlet weak var subTittleLabel: UILabel!
 	
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 		
 		stopWatchLabel.text = "00:00:00"
 		yellow()
-		lapResetButton.isEnabled = false
+		lapResetButton.isEnabled = true
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -49,28 +49,30 @@ class ViewController: UIViewController {
 	}
 	
 	//MARK: - startStopButton
+	
 	@IBAction func startStopButton(_ sender: Any) {
 		if startStopWatch == true {
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
-			startStopButton.image = UIImage(named: "stop_timer.png")
-			lapResetButton.image = UIImage(named: "new_laps.png")
+			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			addLap = true
-			lapResetButton.isEnabled = true
+			//lapResetButton.isHidden = true
 			green()
 		} else {
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
-			lapResetButton.isEnabled = true
-			startStopButton.image = UIImage(named: "start_timer.png")
-			lapResetButton.image = UIImage(named: "remove_all.png")
+			//lapResetButton.isHidden = true
+			startStopButton.setImage(UIImage(named: "stop_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			lapResetButton.setImage(UIImage(named: "remove_all.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			red()
 		}
 	}
 	//end startStopButton
 	
 	//MARK: - lapRefreshButton
+	
 	@IBAction func lapRefreshButton(_ sender: Any) {
 		fractions = 0
 		seconds = 0
@@ -81,9 +83,10 @@ class ViewController: UIViewController {
 			raundLabel.text = "Раунд: \(round)/8"
 		} else {
 			addLap = false
-			lapResetButton.image = UIImage(named: "new_laps.png")
+			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			stopWatchString = "00:00:00"
-			lapResetButton.isEnabled = false
+			//lapResetButton.isHidden = false
 			raundLabel.text = "Раунд: 0/8"
 			subTittleLabel.text = "Тренировка"
 			stopWatchLabel.text = stopWatchString
@@ -125,8 +128,9 @@ class ViewController: UIViewController {
 			round = 1
 			timer.invalidate()
 			yellow()
-			lapResetButton.isEnabled = false
-			startStopButton.image = UIImage(named: "start_timer.png")
+			//lapResetButton.isHidden = false
+			lapsTime.removeAll()
+			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			alertController()
 		}
 		
