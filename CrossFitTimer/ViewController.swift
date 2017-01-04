@@ -155,15 +155,6 @@ class ViewController: UIViewController {
 	}
 	//end Color
 	
-	//MARK: - Alert
-	func alertController() {
-		let alert = UIAlertController(title: "Поздравляю", message: "Тренировка законченна", preferredStyle: .alert)
-		let actionButton = UIAlertAction(title: "Я справился!", style: .default, handler: nil)
-		alert.addAction(actionButton)
-		present(alert, animated: true, completion: nil)
-	}
-	//end Alert
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "tableViewInformation" {
 			lapsTVC = segue.destination as! LapsTVC
