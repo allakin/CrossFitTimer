@@ -29,6 +29,6 @@ extension UIColor {
 		return UIColor(colorLiteralRed: 222/255, green: 82/255, blue: 82/255, alpha: 1) //красный для текста
 	}
 	open class var whiteTransperent: UIColor {
-		return UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.5) //белый с прозрачностью
+		return UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3) //белый с прозрачностью
 	}
 }
