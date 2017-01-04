@@ -25,7 +25,6 @@ class ViewController: UIViewController {
 	@IBOutlet weak var subTittleLabel: UILabel!
 	
 	var lapsTVC: LapsTVC!
-	
 	var lapsTime: [String] = []
 	var timer = Timer()
 	var minutes: Int = 0
@@ -150,7 +149,6 @@ class ViewController: UIViewController {
 		view.backgroundColor = UIColor.greenBGColor
 		stopWatchLabel.textColor = UIColor.greenTextColor
 	}
-	
 	func red(){
 		view.backgroundColor = UIColor.redBGColor
 		stopWatchLabel.textColor = UIColor.redTextColor

@@ -24,8 +24,8 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		//		view.backgroundColor = UIColor.greenBGColor
-		//		lapsTable.separatorColor = UIColor.greenTextColor
+		lapsTable.backgroundColor = UIColor.whiteTransperent
+		lapsTable.separatorColor = UIColor.white
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -45,15 +45,6 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 		cell.detailTextLabel?.text = lapsRound[indexPath.row]
 		return cell
 	}
-	
-	//	// MARK: - Segue
-	//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-	//		if segue.identifier == "tableViewInformation" {
-	//			let destinationVC = segue.destination as! ViewController
-	//            print("lapsRound: \(lapsRound)")
-	//			destinationVC.lapsTime = lapsRound
-	//		}
-	//	}
 	
 	///метод делегата ViewControllerDelegate, получаем данные из ViewController и обновляем таблицу
 	func lapsTimeDidChange(lapsTime: [String]) {
