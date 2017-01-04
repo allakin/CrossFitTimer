@@ -9,16 +9,15 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 	
 	@IBOutlet weak var stopWatchLabel: UILabel!
-	@IBOutlet weak var lapsTableView: UITableView!
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
 	@IBOutlet weak var raundLabel: UILabel!
 	@IBOutlet weak var subTittleLabel: UILabel!
 	
-	var laps: [String] = []
+	var lapsTime: [String] = []
 	var timer = Timer()
 	var minutes: Int = 0
 	var seconds: Int = 0
@@ -66,18 +65,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	//MARK: - lapRefreshButton
 	@IBAction func lapRefreshButton(_ sender: Any) {
 		if addLap == true {
-			laps.insert(stopWatchString, at: 0)
+			lapsTime.insert(stopWatchString, at: 0)
 			fractions = 0
 			seconds = 0
 			minutes = 0
 			round += 1
 			raundLabel.text = "Раунд: \(round)/8"
-			lapsTableView.reloadData()
 		} else {
 			addLap = false
 			lapResetButton.image = UIImage(named: "new_laps.png")
-			laps.removeAll()
-			lapsTableView.reloadData()
+			lapsTime.removeAll()
 			fractions = 0
 			seconds = 0
 			minutes = 0
@@ -106,8 +103,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 			seconds = 0
 			minutes = 0
 			round += 1
-			laps.insert(stopWatchString, at: 0)
-			lapsTableView.reloadData()
+			lapsTime.insert(stopWatchString, at: 0)
+			print("\(lapsTime) lapsTime")
 			raundLabel.text = "Раунд: \(round)/8"
 		} else if round == 9 {
 			raundLabel.text = "Раунд: 8/8"
@@ -137,21 +134,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 	func yellow(){
 		view.backgroundColor = UIColor.yellowBGColor
 		stopWatchLabel.textColor = UIColor.yellowTextColor
-		lapsTableView.backgroundColor = UIColor.yellowBGColor
-		lapsTableView.separatorColor = UIColor.yellowTextColor
 	}
 	func green(){
 		view.backgroundColor = UIColor.greenBGColor
 		stopWatchLabel.textColor = UIColor.greenTextColor
-		lapsTableView.backgroundColor = UIColor.greenBGColor
-		lapsTableView.separatorColor = UIColor.greenTextColor
 	}
 	
 	func red(){
 		view.backgroundColor = UIColor.redBGColor
 		stopWatchLabel.textColor = UIColor.redTextColor
-		lapsTableView.backgroundColor = UIColor.redBGColor
-		lapsTableView.separatorColor = UIColor.redTextColor
 	}
 	//end Color
 	
@@ -163,19 +154,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 		present(alert, animated: true, completion: nil)
 	}
 	//end Alert
-	
-	//MARK: - Table View Methods
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return laps.count
+
+	// MARK: - Segue
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "tableViewInformation" {
+			let destinationVC = segue.destination as! LapsTVC
+			destinationVC.lapsRound = lapsTime
+		}
 	}
-	
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "cell")
-		cell.textLabel?.text = "Время \(laps.count - indexPath.row) раунда"
-		cell.detailTextLabel?.text = laps[indexPath.row]
-		return cell
-	}
-	//end Table View Methods
 	
 }
 
