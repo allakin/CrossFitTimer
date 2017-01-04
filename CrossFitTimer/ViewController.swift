@@ -9,13 +9,22 @@
 import UIKit
 import Foundation
 
+/// простенький протокол, который будет отвечать за делегирование
+protocol ViewControllerDelegate: NSObjectProtocol {
+	func lapsTimeDidChange(lapsTime: [String])
+}
+
 class ViewController: UIViewController {
+	
+	weak var delegate: ViewControllerDelegate?
 	
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	@IBOutlet weak var startStopButton: UIBarButtonItem!
 	@IBOutlet weak var lapResetButton: UIBarButtonItem!
 	@IBOutlet weak var raundLabel: UILabel!
 	@IBOutlet weak var subTittleLabel: UILabel!
+	
+	var lapsTVC: LapsTVC!
 	
 	var lapsTime: [String] = []
 	var timer = Timer()
@@ -29,6 +38,7 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		stopWatchLabel.text = "00:00:00"
 		yellow()
 		lapResetButton.isEnabled = false
@@ -41,7 +51,6 @@ class ViewController: UIViewController {
 	
 	//MARK: - startStopButton
 	@IBAction func startStopButton(_ sender: Any) {
-		
 		if startStopWatch == true {
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
@@ -64,25 +73,27 @@ class ViewController: UIViewController {
 	
 	//MARK: - lapRefreshButton
 	@IBAction func lapRefreshButton(_ sender: Any) {
+		fractions = 0
+		seconds = 0
+		minutes = 0
 		if addLap == true {
 			lapsTime.insert(stopWatchString, at: 0)
-			fractions = 0
-			seconds = 0
-			minutes = 0
 			round += 1
 			raundLabel.text = "Раунд: \(round)/8"
 		} else {
 			addLap = false
 			lapResetButton.image = UIImage(named: "new_laps.png")
-			lapsTime.removeAll()
-			fractions = 0
-			seconds = 0
-			minutes = 0
 			stopWatchString = "00:00:00"
 			lapResetButton.isEnabled = false
+			raundLabel.text = "Раунд: 0/8"
+			subTittleLabel.text = "Тренировка"
 			stopWatchLabel.text = stopWatchString
+			lapsTime.removeAll()
 			yellow()
 		}
+		
+		delegate?.lapsTimeDidChange(lapsTime: lapsTime)
+		
 	}
 	//end lapRefreshButton
 	
@@ -104,7 +115,7 @@ class ViewController: UIViewController {
 			minutes = 0
 			round += 1
 			lapsTime.insert(stopWatchString, at: 0)
-			print("\(lapsTime) lapsTime")
+			delegate?.lapsTimeDidChange(lapsTime: lapsTime)
 			raundLabel.text = "Раунд: \(round)/8"
 		} else if round == 9 {
 			raundLabel.text = "Раунд: 8/8"
@@ -154,12 +165,11 @@ class ViewController: UIViewController {
 		present(alert, animated: true, completion: nil)
 	}
 	//end Alert
-
-	// MARK: - Segue
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "tableViewInformation" {
-			let destinationVC = segue.destination as! LapsTVC
-			destinationVC.lapsRound = lapsTime
+			lapsTVC = segue.destination as! LapsTVC
+			lapsTVC.viewController = self
 		}
 	}
 	

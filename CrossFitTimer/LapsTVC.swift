@@ -8,16 +8,24 @@
 
 import UIKit
 
-class LapsTVC: UITableViewController {
+class LapsTVC: UITableViewController, ViewControllerDelegate {
 	
 	@IBOutlet var lapsTable: UITableView!
+	
+	var viewController: ViewController? {
+		didSet {
+			/// каждый раз, когда в viewController будет присваиватся какое-то значение, будет выполнятся то, что мы пишем в didSet
+			/// в данном случае этот код выполнится один раз
+			viewController?.delegate = self
+		}
+	}
 	
 	var lapsRound: [String] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-//		view.backgroundColor = UIColor.greenBGColor
-//		lapsTable.separatorColor = UIColor.greenTextColor
+		//		view.backgroundColor = UIColor.greenBGColor
+		//		lapsTable.separatorColor = UIColor.greenTextColor
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -38,6 +46,20 @@ class LapsTVC: UITableViewController {
 		return cell
 	}
 	
+	//	// MARK: - Segue
+	//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	//		if segue.identifier == "tableViewInformation" {
+	//			let destinationVC = segue.destination as! ViewController
+	//            print("lapsRound: \(lapsRound)")
+	//			destinationVC.lapsTime = lapsRound
+	//		}
+	//	}
+	
+	///метод делегата ViewControllerDelegate, получаем данные из ViewController и обновляем таблицу
+	func lapsTimeDidChange(lapsTime: [String]) {
+		lapsRound = lapsTime
+		lapsTable.reloadData()
+	}
 	
 	/*
 		// Override to support conditional editing of the table view.
