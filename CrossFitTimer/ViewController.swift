@@ -41,6 +41,8 @@ class ViewController: UIViewController {
 		stopWatchLabel.text = "00:00:00"
 		yellow()
 		lapResetButton.isEnabled = true
+// 	navigationController?.navigationBar.tintColor = UIColor.yellowTextColor
+//		UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
 	}
 	
 	override func didReceiveMemoryWarning() {

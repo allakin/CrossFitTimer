@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fIB-6p-mNJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Cross-Fit Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,19 +30,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fau-Yf-LbA">
-                                <rect key="frame" x="0.0" y="30" width="375" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="cik-IL-e88"/>
-                                </constraints>
-                                <color key="barTintColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Cross-Fit Timer" id="a8F-Mm-u82"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOP-kG-cES">
-                                <rect key="frame" x="16" y="124" width="343" height="84"/>
+                                <rect key="frame" x="16" y="114" width="343" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="iYL-sl-bIx"/>
                                 </constraints>
@@ -51,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Раунд: 1/8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGM-jB-KcW">
-                                <rect key="frame" x="16" y="94" width="343" height="20"/>
+                                <rect key="frame" x="16" y="84" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="FSO-E8-dd2"/>
                                 </constraints>
@@ -60,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-0L-vD2">
-                                <rect key="frame" x="16" y="228" width="343" height="20"/>
+                                <rect key="frame" x="16" y="218" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="K1p-vk-cl2"/>
                                 </constraints>
@@ -69,7 +58,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isr-cz-kp0">
-                                <rect key="frame" x="0.0" y="268" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="258" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="uuN-i7-sD7"/>
                                 </constraints>
@@ -78,10 +67,10 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQ9-J0-NSY">
-                                <rect key="frame" x="0.0" y="468" width="375" height="199"/>
+                                <rect key="frame" x="0.0" y="458" width="375" height="209"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38w-EB-hAc">
-                                        <rect key="frame" x="65" y="64" width="70" height="70"/>
+                                        <rect key="frame" x="65" y="69" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="6CP-qX-uwF"/>
                                             <constraint firstAttribute="height" constant="70" id="CCZ-wL-9iu"/>
@@ -92,7 +81,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwV-52-9hh">
-                                        <rect key="frame" x="240" y="64" width="70" height="70"/>
+                                        <rect key="frame" x="240" y="69" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Vjn-1S-uWF"/>
                                             <constraint firstAttribute="width" constant="70" id="WeI-fR-Bde"/>
@@ -117,24 +106,22 @@
                             <constraint firstItem="8FF-0L-vD2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0rt-qI-PRC"/>
                             <constraint firstItem="Isr-cz-kp0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Ec-If-rkW"/>
                             <constraint firstItem="PGM-jB-KcW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4nj-Iw-QdX"/>
-                            <constraint firstAttribute="trailing" secondItem="Fau-Yf-LbA" secondAttribute="trailing" id="9Tp-1b-XO1"/>
                             <constraint firstItem="PGM-jB-KcW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AGy-j5-UlN"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="DBY-En-XZj"/>
                             <constraint firstItem="yQ9-J0-NSY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Emx-tQ-o5g"/>
-                            <constraint firstItem="PGM-jB-KcW" firstAttribute="top" secondItem="Fau-Yf-LbA" secondAttribute="bottom" constant="20" id="Gbj-u7-SkY"/>
-                            <constraint firstItem="Fau-Yf-LbA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="LVK-0N-2xZ"/>
+                            <constraint firstItem="PGM-jB-KcW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="G5l-JC-u3d"/>
                             <constraint firstAttribute="trailing" secondItem="yQ9-J0-NSY" secondAttribute="trailing" id="Ppd-F1-EI8"/>
                             <constraint firstItem="Isr-cz-kp0" firstAttribute="top" secondItem="8FF-0L-vD2" secondAttribute="bottom" constant="20" id="ZUp-Oq-z3m"/>
                             <constraint firstAttribute="trailing" secondItem="Isr-cz-kp0" secondAttribute="trailing" id="ZiI-q4-DZs"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="top" secondItem="PGM-jB-KcW" secondAttribute="bottom" constant="10" id="aTt-By-TjS"/>
                             <constraint firstItem="8FF-0L-vD2" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="20" id="agO-uU-IDl"/>
-                            <constraint firstItem="Fau-Yf-LbA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="cdn-Mf-8dA"/>
                             <constraint firstItem="8FF-0L-vD2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ciS-0W-sWt"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="e9L-HR-wLw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yQ9-J0-NSY" secondAttribute="bottom" id="hP9-6u-ztu"/>
                             <constraint firstItem="yQ9-J0-NSY" firstAttribute="top" secondItem="Isr-cz-kp0" secondAttribute="bottom" id="soT-ZQ-DCS"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Cross-Fit Timer" id="TwQ-sb-zwl"/>
                     <connections>
                         <outlet property="lapResetButton" destination="zwV-52-9hh" id="S1X-V9-YHu"/>
                         <outlet property="raundLabel" destination="PGM-jB-KcW" id="HB9-eT-6mp"/>
@@ -145,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
         <!--LapsTVC-->
         <scene sceneID="RSf-CW-ap5">
@@ -177,7 +164,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLG-Nd-Ugl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921" y="214"/>
+            <point key="canvasLocation" x="1860" y="213.19340329835083"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dBC-ym-wfA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fIB-6p-mNJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iDR-qO-c3b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iW3-v6-ynn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9er-Cs-fn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>
