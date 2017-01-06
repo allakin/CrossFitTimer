@@ -37,12 +37,11 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		stopWatchLabel.text = "00:00:00"
 		yellow()
 		lapResetButton.isEnabled = true
-// 	navigationController?.navigationBar.tintColor = UIColor.yellowTextColor
-//		UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+		// Change the navigation bar background color to blue.
+		navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -60,6 +59,7 @@ class ViewController: UIViewController {
 			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			addLap = true
 			//lapResetButton.isHidden = true
+			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
 			green()
 		} else {
 			startStopWatch = true
@@ -68,6 +68,7 @@ class ViewController: UIViewController {
 			//lapResetButton.isHidden = true
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			lapResetButton.setImage(UIImage(named: "remove_all.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			navigationController!.navigationBar.barTintColor = UIColor.redTextColor
 			red()
 		}
 	}
@@ -93,6 +94,7 @@ class ViewController: UIViewController {
 			subTittleLabel.text = "Тренировка"
 			stopWatchLabel.text = stopWatchString
 			lapsTime.removeAll()
+			navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 			yellow()
 		}
 		
