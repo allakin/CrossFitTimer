@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CrossFitTimer/ViewController.swift"
-            timestampString = "505419014.88968"
+            timestampString = "505423708.798933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>

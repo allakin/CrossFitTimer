@@ -39,7 +39,6 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		stopWatchLabel.text = "00:00:00"
 		yellow()
-		lapResetButton.isEnabled = true
 		// Change the navigation bar background color to blue.
 		navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 	}
@@ -58,14 +57,12 @@ class ViewController: UIViewController {
 			startStopButton.setImage(UIImage(named: "stop_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			addLap = true
-			//lapResetButton.isHidden = true
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
 			green()
 		} else {
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
-			//lapResetButton.isHidden = true
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			lapResetButton.setImage(UIImage(named: "remove_all.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			navigationController!.navigationBar.barTintColor = UIColor.redTextColor
@@ -89,7 +86,6 @@ class ViewController: UIViewController {
 			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			stopWatchString = "00:00:00"
-			//lapResetButton.isHidden = false
 			raundLabel.text = "Раунд: 0/8"
 			subTittleLabel.text = "Тренировка"
 			stopWatchLabel.text = stopWatchString
@@ -133,7 +129,6 @@ class ViewController: UIViewController {
 			round = 1
 			timer.invalidate()
 			yellow()
-			//lapResetButton.isHidden = false
 			lapsTime.removeAll()
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
