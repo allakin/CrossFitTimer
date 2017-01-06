@@ -135,6 +135,7 @@ class ViewController: UIViewController {
 			//lapResetButton.isHidden = false
 			lapsTime.removeAll()
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 			alertController()
 		}
 		
