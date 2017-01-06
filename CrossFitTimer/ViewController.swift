@@ -124,6 +124,7 @@ class ViewController: UIViewController {
 			delegate?.lapsTimeDidChange(lapsTime: lapsTime)
 			raundLabel.text = "Раунд: \(round)/8"
 		} else if round == 9 {
+			startStopWatch = true
 			raundLabel.text = "Раунд: 8/8"
 			subTittleLabel.text = "Тренировка завершенна"
 			fractions = 0
