@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Cross-Fit Timer-->
+        <!--Таймер-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,7 +121,14 @@
                             <constraint firstItem="yQ9-J0-NSY" firstAttribute="top" secondItem="Isr-cz-kp0" secondAttribute="bottom" id="soT-ZQ-DCS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Cross-Fit Timer" id="TwQ-sb-zwl"/>
+                    <navigationItem key="navigationItem" title="Таймер" id="TwQ-sb-zwl">
+                        <barButtonItem key="rightBarButtonItem" title="Изменить" id="pyd-eb-J6T">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="MsT-WO-lQF" kind="show" identifier="editTimeTimer" id="oWM-Ct-haO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lapResetButton" destination="zwV-52-9hh" id="S1X-V9-YHu"/>
                         <outlet property="raundLabel" destination="PGM-jB-KcW" id="HB9-eT-6mp"/>
@@ -133,6 +140,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4Qe-ui-9to">
+            <objects>
+                <viewController id="MsT-WO-lQF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="beS-Cs-Y2v"/>
+                        <viewControllerLayoutGuide type="bottom" id="rdd-EM-i8v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jeg-0o-0ah">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSd-tg-EM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="139"/>
         </scene>
         <!--LapsTVC-->
         <scene sceneID="RSf-CW-ap5">
@@ -164,14 +189,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLG-Nd-Ugl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="213.19340329835083"/>
+            <point key="canvasLocation" x="1076" y="671"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dBC-ym-wfA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fIB-6p-mNJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iDR-qO-c3b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iDR-qO-c3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

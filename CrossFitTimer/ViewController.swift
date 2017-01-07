@@ -27,15 +27,11 @@ class ViewController: UIViewController {
 
 	var player: AVAudioPlayer!
 	var lapsTVC: LapsTVC!
-	var lapsTime: [String] = []
 	var timer = Timer()
-	var minutes: Int = 0
-	var seconds: Int = 0
-	var fractions: Int = 0
-	var startStopWatch: Bool = true
-	var addLap: Bool = false
-	var stopWatchString: String = ""
-	var round: Int = 1
+	var time = TimeTimer()
+	var model = TimerModel()
+	var lapsTime: [String] = []
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -63,19 +59,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func startStopButton(_ sender: Any) {
 		
-		if startStopWatch == true {
+		if model.startStopWatch == true {
 			player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
-			startStopWatch = false
+			model.startStopWatch = false
 			startStopButton.setImage(UIImage.stopTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
-			addLap = true
+			model.addLap = true
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
 			green()
 		} else {
 			player.stop()
-			startStopWatch = true
-			addLap = false
+			model.startStopWatch = true
+			model.addLap = false
 			timer.invalidate()
 			startStopButton.setImage(UIImage.startTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			lapResetButton.setImage(UIImage.removeAllTimer().withRenderingMode(.alwaysOriginal), for: .normal)
@@ -88,26 +84,26 @@ class ViewController: UIViewController {
 	//MARK: - lapRefreshButton
 	
 	@IBAction func lapRefreshButton(_ sender: Any) {
-		fractions = 0
-		seconds = 0
-		minutes = 0
+		model.fractions = 0
+		model.seconds = 0
+		model.minutes = 0
 		player.stop()
 		player.currentTime = 0
 		player.play()
-		if addLap == true {
-			lapsTime.insert(stopWatchString, at: 0)
-			round += 1
+		if model.addLap == true {
+			lapsTime.insert(model.stopWatchString, at: 0)
+			model.round += 1
 			raundLabel.text = "Раунд: \(round)/8"
 		} else {
 			player.stop()
 			player.currentTime = 0
-			addLap = false
+			model.addLap = false
 			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			startStopButton.setImage(UIImage.startTimer().withRenderingMode(.alwaysOriginal), for: .normal)
-			stopWatchString = "00:00:00"
+			model.stopWatchString = "00:00:00"
 			raundLabel.text = "Раунд: 0/8"
 			subTittleLabel.text = "Тренировка"
-			stopWatchLabel.text = stopWatchString
+			stopWatchLabel.text = model.stopWatchString
 			lapsTime.removeAll()
 			navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 			yellow()
@@ -120,37 +116,37 @@ class ViewController: UIViewController {
 	
 	//MARK: - func updateStopWatch
 	func updateStopWatch() {
-		fractions += 1
-		if fractions == 100 {
-			seconds += 1
-			fractions = 0
-		} else if seconds == 60 {
-			minutes += 1
-			seconds = 0
-		} else if seconds == 60 {
-			minutes += 1
-			seconds = 0
-		} else if minutes == 3 && seconds == 18{
+		model.fractions += 1
+		if model.fractions == 100 {
+			model.seconds += 1
+			model.fractions = 0
+		} else if model.seconds == 60 {
+			model.minutes += 1
+			model.seconds = 0
+		} else if model.seconds == 60 {
+			model.minutes += 1
+			model.seconds = 0
+		} else if model.minutes == time.min && model.seconds == time.sec{
 			player.stop()
 			player.currentTime = 0
 			player.play()
-			fractions = 0
-			seconds = 0
-			minutes = 0
-			round += 1
-			lapsTime.insert(stopWatchString, at: 0)
+			model.fractions = 0
+			model.seconds = 0
+			model.minutes = 0
+			model.round += 1
+			lapsTime.insert(model.stopWatchString, at: 0)
 			delegate?.lapsTimeDidChange(lapsTime: lapsTime)
 			raundLabel.text = "Раунд: \(round)/8"
-		} else if round == 9 {
+		} else if model.round == 9 {
 			player.stop()
 			player.currentTime = 0
-			startStopWatch = true
+			model.startStopWatch = true
 			raundLabel.text = "Раунд: 8/8"
 			subTittleLabel.text = "Тренировка завершенна"
-			fractions = 0
-			seconds = 0
-			minutes = 0
-			round = 1
+			model.fractions = 0
+			model.seconds = 0
+			model.minutes = 0
+			model.round = 1
 			timer.invalidate()
 			yellow()
 			lapsTime.removeAll()
@@ -159,12 +155,12 @@ class ViewController: UIViewController {
 			alertController()
 		}
 		
-		let fractionsString = fractions > 9 ? "\(fractions)" : "0\(fractions)"
-		let secondString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
-		let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
+		let fractionsString = model.fractions > 9 ? "\(model.fractions)" : "0\(model.fractions)"
+		let secondString = model.seconds > 9 ? "\(model.seconds)" : "0\(model.seconds)"
+		let minutesString = model.minutes > 9 ? "\(model.minutes)" : "0\(model.minutes)"
 		
-		stopWatchString = "\(minutesString):\(secondString):\(fractionsString)"
-		stopWatchLabel.text = stopWatchString
+		model.stopWatchString = "\(minutesString):\(secondString):\(fractionsString)"
+		stopWatchLabel.text = model.stopWatchString
 		
 	}
 	//end func updateStopWatch

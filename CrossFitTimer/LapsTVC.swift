@@ -12,6 +12,8 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 	
 	@IBOutlet var lapsTable: UITableView!
 	
+	var time = TimeTimer()
+	
 	var viewController: ViewController? {
 		didSet {
 			/// каждый раз, когда в viewController будет присваиватся какое-то значение, будет выполнятся то, что мы пишем в didSet
