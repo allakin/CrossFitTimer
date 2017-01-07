@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-0L-vD2">
-                                <rect key="frame" x="16" y="218" width="343" height="20"/>
+                                <rect key="frame" x="16" y="208" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="K1p-vk-cl2"/>
                                 </constraints>
@@ -111,10 +111,10 @@
                             <constraint firstItem="yQ9-J0-NSY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Emx-tQ-o5g"/>
                             <constraint firstItem="PGM-jB-KcW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="G5l-JC-u3d"/>
                             <constraint firstAttribute="trailing" secondItem="yQ9-J0-NSY" secondAttribute="trailing" id="Ppd-F1-EI8"/>
-                            <constraint firstItem="Isr-cz-kp0" firstAttribute="top" secondItem="8FF-0L-vD2" secondAttribute="bottom" constant="20" id="ZUp-Oq-z3m"/>
+                            <constraint firstItem="Isr-cz-kp0" firstAttribute="top" secondItem="8FF-0L-vD2" secondAttribute="bottom" constant="30" id="ZUp-Oq-z3m"/>
                             <constraint firstAttribute="trailing" secondItem="Isr-cz-kp0" secondAttribute="trailing" id="ZiI-q4-DZs"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="top" secondItem="PGM-jB-KcW" secondAttribute="bottom" constant="10" id="aTt-By-TjS"/>
-                            <constraint firstItem="8FF-0L-vD2" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="20" id="agO-uU-IDl"/>
+                            <constraint firstItem="8FF-0L-vD2" firstAttribute="top" secondItem="jOP-kG-cES" secondAttribute="bottom" constant="10" id="agO-uU-IDl"/>
                             <constraint firstItem="8FF-0L-vD2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ciS-0W-sWt"/>
                             <constraint firstItem="jOP-kG-cES" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="e9L-HR-wLw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yQ9-J0-NSY" secondAttribute="bottom" id="hP9-6u-ztu"/>
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mM0-AS-iGr" id="qq5-fl-tlg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
