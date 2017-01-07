@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7347C68A1E21422600025620 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7347C6891E21422600025620 /* Image.swift */; };
 		735A70341E1D3796001C05CA /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735A70331E1D3796001C05CA /* Alerts.swift */; };
 		737118681E1B91E7009DE0D0 /* LapsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737118671E1B91E7009DE0D0 /* LapsTVC.swift */; };
 		738D29B11E1DA2710046D81D /* new_laps.png in Resources */ = {isa = PBXBuildFile; fileRef = 738D29AD1E1DA2710046D81D /* new_laps.png */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7347C6891E21422600025620 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		735A70331E1D3796001C05CA /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		737118671E1B91E7009DE0D0 /* LapsTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LapsTVC.swift; sourceTree = "<group>"; };
 		738D29AD1E1DA2710046D81D /* new_laps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = new_laps.png; path = sketch/new_laps.png; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				73C8D5A01E18463500C8EB4C /* AppDelegate.swift */,
 				73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */,
 				73C8D5A21E18463500C8EB4C /* ViewController.swift */,
+				7347C6891E21422600025620 /* Image.swift */,
 				737118671E1B91E7009DE0D0 /* LapsTVC.swift */,
 				735A70331E1D3796001C05CA /* Alerts.swift */,
 				73C8D5A41E18463500C8EB4C /* Main.storyboard */,
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73C8D5A31E18463500C8EB4C /* ViewController.swift in Sources */,
+				7347C68A1E21422600025620 /* Image.swift in Sources */,
 				735A70341E1D3796001C05CA /* Alerts.swift in Sources */,
 				737118681E1B91E7009DE0D0 /* LapsTVC.swift in Sources */,
 				73C8D5A11E18463500C8EB4C /* AppDelegate.swift in Sources */,

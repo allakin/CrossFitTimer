@@ -67,8 +67,8 @@ class ViewController: UIViewController {
 			player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
-			startStopButton.setImage(UIImage(named: "stop_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			startStopButton.setImage(UIImage.stopTimer().withRenderingMode(.alwaysOriginal), for: .normal)
+			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			addLap = true
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
 			green()
@@ -77,8 +77,8 @@ class ViewController: UIViewController {
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
-			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-			lapResetButton.setImage(UIImage(named: "remove_all.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			startStopButton.setImage(UIImage.startTimer().withRenderingMode(.alwaysOriginal), for: .normal)
+			lapResetButton.setImage(UIImage.removeAllTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			navigationController!.navigationBar.barTintColor = UIColor.redTextColor
 			red()
 		}
@@ -102,8 +102,8 @@ class ViewController: UIViewController {
 			player.stop()
 			player.currentTime = 0
 			addLap = false
-			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
+			startStopButton.setImage(UIImage.startTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			stopWatchString = "00:00:00"
 			raundLabel.text = "Раунд: 0/8"
 			subTittleLabel.text = "Тренировка"
@@ -154,7 +154,7 @@ class ViewController: UIViewController {
 			timer.invalidate()
 			yellow()
 			lapsTime.removeAll()
-			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+			startStopButton.setImage(UIImage.startTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
 			alertController()
 		}
