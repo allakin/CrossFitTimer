@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import AVFoundation
 
 /// простенький протокол, который будет отвечать за делегирование
 protocol ViewControllerDelegate: NSObjectProtocol {
@@ -23,7 +24,8 @@ class ViewController: UIViewController {
 	@IBOutlet weak var lapResetButton: UIButton!
 	@IBOutlet weak var raundLabel: UILabel!
 	@IBOutlet weak var subTittleLabel: UILabel!
-	
+
+	var player: AVAudioPlayer!
 	var lapsTVC: LapsTVC!
 	var lapsTime: [String] = []
 	var timer = Timer()
@@ -41,6 +43,15 @@ class ViewController: UIViewController {
 		yellow()
 		// Change the navigation bar background color to blue.
 		navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
+		
+		//Указал путь к аудио файлу
+		do {
+			let audioPath = Bundle.main.path(forResource: "play_round", ofType: "mp3")
+			try player = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+		}	catch {
+			//Error
+		}
+		
 	}
 	
 	override func didReceiveMemoryWarning() {
@@ -51,7 +62,9 @@ class ViewController: UIViewController {
 	//MARK: - startStopButton
 	
 	@IBAction func startStopButton(_ sender: Any) {
+		
 		if startStopWatch == true {
+			player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			startStopWatch = false
 			startStopButton.setImage(UIImage(named: "stop_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -60,6 +73,7 @@ class ViewController: UIViewController {
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
 			green()
 		} else {
+			player.stop()
 			startStopWatch = true
 			addLap = false
 			timer.invalidate()
@@ -77,11 +91,16 @@ class ViewController: UIViewController {
 		fractions = 0
 		seconds = 0
 		minutes = 0
+		player.stop()
+		player.currentTime = 0
+		player.play()
 		if addLap == true {
 			lapsTime.insert(stopWatchString, at: 0)
 			round += 1
 			raundLabel.text = "Раунд: \(round)/8"
 		} else {
+			player.stop()
+			player.currentTime = 0
 			addLap = false
 			lapResetButton.setImage(UIImage(named: "new_laps.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
 			startStopButton.setImage(UIImage(named: "start_timer.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -111,7 +130,10 @@ class ViewController: UIViewController {
 		} else if seconds == 60 {
 			minutes += 1
 			seconds = 0
-		} else if minutes == 0 && seconds == 10{
+		} else if minutes == 3 && seconds == 18{
+			player.stop()
+			player.currentTime = 0
+			player.play()
 			fractions = 0
 			seconds = 0
 			minutes = 0
@@ -120,6 +142,8 @@ class ViewController: UIViewController {
 			delegate?.lapsTimeDidChange(lapsTime: lapsTime)
 			raundLabel.text = "Раунд: \(round)/8"
 		} else if round == 9 {
+			player.stop()
+			player.currentTime = 0
 			startStopWatch = true
 			raundLabel.text = "Раунд: 8/8"
 			subTittleLabel.text = "Тренировка завершенна"

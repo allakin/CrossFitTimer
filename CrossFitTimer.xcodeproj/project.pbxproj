@@ -19,6 +19,8 @@
 		73C8D5A81E18463500C8EB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A71E18463500C8EB4C /* Assets.xcassets */; };
 		73C8D5AB1E18463500C8EB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C8D5A91E18463500C8EB4C /* LaunchScreen.storyboard */; };
 		73C8D5C51E1A647700C8EB4C /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */; };
+		73F46E2A1E20F9C60044A009 /* relax.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73F46E291E20F9C60044A009 /* relax.mp3 */; };
+		73F46E2D1E210A750044A009 /* play_round.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 73F46E2C1E210A750044A009 /* play_round.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		73C8D5B71E18474800C8EB4C /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Medium.ttf"; sourceTree = "<group>"; };
 		73C8D5B91E18474800C8EB4C /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-Regular.ttf"; sourceTree = "<group>"; };
 		73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		73F46E291E20F9C60044A009 /* relax.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relax.mp3; sourceTree = "<group>"; };
+		73F46E2C1E210A750044A009 /* play_round.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = play_round.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				73C8D5BB1E18499A00C8EB4C /* button_images */,
+				73F46E2B1E20F9D50044A009 /* song */,
 				73C8D5BA1E18475000C8EB4C /* fonts */,
 				73C8D5A01E18463500C8EB4C /* AppDelegate.swift */,
 				73C8D5C41E1A647700C8EB4C /* ColorPalette.swift */,
@@ -107,6 +112,15 @@
 				738D29B01E1DA2710046D81D /* stop_timer.png */,
 			);
 			name = button_images;
+			sourceTree = "<group>";
+		};
+		73F46E2B1E20F9D50044A009 /* song */ = {
+			isa = PBXGroup;
+			children = (
+				73F46E291E20F9C60044A009 /* relax.mp3 */,
+				73F46E2C1E210A750044A009 /* play_round.mp3 */,
+			);
+			name = song;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +183,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F46E2D1E210A750044A009 /* play_round.mp3 in Resources */,
 				738D29B31E1DA2710046D81D /* start_timer.png in Resources */,
 				738D29B11E1DA2710046D81D /* new_laps.png in Resources */,
 				73C8D5AB1E18463500C8EB4C /* LaunchScreen.storyboard in Resources */,
+				73F46E2A1E20F9C60044A009 /* relax.mp3 in Resources */,
 				738D29B41E1DA2710046D81D /* stop_timer.png in Resources */,
 				73C8D5A81E18463500C8EB4C /* Assets.xcassets in Resources */,
 				73C8D5A61E18463500C8EB4C /* Main.storyboard in Resources */,

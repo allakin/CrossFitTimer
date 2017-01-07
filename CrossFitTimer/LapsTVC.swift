@@ -22,6 +22,7 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 	
 	var lapsRound: [String] = []
 	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lapsTable.backgroundColor = UIColor.whiteTransperent
@@ -50,5 +51,6 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 	func lapsTimeDidChange(lapsTime: [String]) {
 		lapsRound = lapsTime
 		lapsTable.reloadData()
+		print(lapsRound)
 	}
 }
