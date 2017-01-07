@@ -67,6 +67,7 @@ class ViewController: UIViewController {
 			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			model.addLap = true
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
+			subTittleLabel.text = "Тренировка"
 			green()
 		} else {
 			player.stop()
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
 		if model.addLap == true {
 			lapsTime.insert(model.stopWatchString, at: 0)
 			model.round += 1
-			raundLabel.text = "Раунд: \(round)/8"
+			raundLabel.text = "Раунд: \(model.round)/8"
 		} else {
 			player.stop()
 			player.currentTime = 0
@@ -136,7 +137,7 @@ class ViewController: UIViewController {
 			model.round += 1
 			lapsTime.insert(model.stopWatchString, at: 0)
 			delegate?.lapsTimeDidChange(lapsTime: lapsTime)
-			raundLabel.text = "Раунд: \(round)/8"
+			raundLabel.text = "Раунд: \(model.round)/8"
 		} else if model.round == 9 {
 			player.stop()
 			player.currentTime = 0

@@ -10,16 +10,27 @@ import Foundation
 import UIKit
 
 class TimerModel {
-	var minutes = 0
-	var seconds = 0
-	var fractions = 0
-	var startStopWatch = true
-	var addLap = false
-	var stopWatchString = ""
-	var round = 1
+	var minutes: Int
+	var seconds: Int
+	var fractions: Int
+	var startStopWatch: Bool
+	var addLap: Bool
+	var stopWatchString: String
+	var round: Int
+	
+	init() {
+		minutes = 0
+		seconds = 0
+		fractions = 0
+		startStopWatch = true
+		addLap = false
+		stopWatchString = ""
+		round = 1
+	}
+	
 }
 
 class TimeTimer {
-	var min = 0
-	var sec = 0
+	var min: Int = 0
+	var sec: Int = 30
 }
