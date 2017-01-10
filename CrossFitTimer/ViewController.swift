@@ -32,7 +32,6 @@ class ViewController: UIViewController {
 	var model = TimerModel()
 	var lapsTime: [String] = []
 	
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		stopWatchLabel.text = "00:00:00"
@@ -128,6 +127,8 @@ class ViewController: UIViewController {
 			model.minutes += 1
 			model.seconds = 0
 		} else if model.minutes == time.min && model.seconds == time.sec{
+			print("\(time.min)-viewcontroller <------------------")
+			print("\(time.sec)-viewcontroller <------------------")
 			player.stop()
 			player.currentTime = 0
 			player.play()

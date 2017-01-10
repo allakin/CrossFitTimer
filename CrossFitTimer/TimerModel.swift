@@ -30,7 +30,54 @@ class TimerModel {
 	
 }
 
+//class TimeTimer {
+//	var min: Int {
+//		get {
+//			return min
+//		}
+//		set {
+//			if newValue > 0 {
+//				min = newValue
+//				print(min)
+//			}
+//		}
+//	}
+//	var sec: Int = 0
+//}
+
 class TimeTimer {
-	var min: Int = 0
-	var sec: Int = 30
+	var min = 0
+	var sec = 13
 }
+
+//
+//class TimeTimer {
+//	var min = 0
+//	var _min: Int {
+//		get {
+//			return min
+//			print("\(min)-get min")
+//		}
+//		set {
+//			if newValue > 0 {
+//				min = newValue
+//				print("\(min)-min")
+//			}
+//		}
+//	}
+//	
+//	var sec = 0
+//	var _sec: Int {
+//		get {
+//			return sec
+//			print("\(sec)-get sec")
+//		}
+//		set {
+//			if newValue > 0 {
+//				sec = newValue
+//				print("\(sec)-sec")
+//			}
+//		}
+//	}
+//	
+//}
