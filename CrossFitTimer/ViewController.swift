@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 	@IBAction func startStopButton(_ sender: Any) {
 		
 		if model.startStopWatch == true {
-			player.play()
+			//player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			model.startStopWatch = false
 			startStopButton.setImage(UIImage.stopTimer().withRenderingMode(.alwaysOriginal), for: .normal)
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
 			model.seconds = 0
 		} else if model.minutes == time.min && model.seconds == time.sec{
 			print("\(time.min)-viewcontroller <------------------")
-			print("\(time.sec)-viewcontroller <------------------")
+			print("\(time.sec)-viewcontroller<------------------")
 			player.stop()
 			player.currentTime = 0
 			player.play()
