@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fIB-6p-mNJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fIB-6p-mNJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Таймер-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,11 +121,11 @@
                             <constraint firstItem="yQ9-J0-NSY" firstAttribute="top" secondItem="Isr-cz-kp0" secondAttribute="bottom" id="soT-ZQ-DCS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Таймер" id="TwQ-sb-zwl">
-                        <barButtonItem key="rightBarButtonItem" title="Изменить" id="pyd-eb-J6T">
+                    <navigationItem key="navigationItem" id="TwQ-sb-zwl">
+                        <barButtonItem key="rightBarButtonItem" title="Установить время" id="pyd-eb-J6T">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="MsT-WO-lQF" kind="show" identifier="editTimeTimer" id="oWM-Ct-haO"/>
+                                <segue destination="9Fi-gl-Gir" kind="showDetail" identifier="settingLaps" id="T72-RL-OWT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -142,78 +142,80 @@
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
         <!--Setting TimerVC-->
-        <scene sceneID="4Qe-ui-9to">
+        <scene sceneID="GIH-Dw-p9q">
             <objects>
-                <viewController id="MsT-WO-lQF" customClass="SettingTimerVC" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3jT-VG-nh2" customClass="SettingTimerVC" customModule="CrossFitTimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="beS-Cs-Y2v"/>
-                        <viewControllerLayoutGuide type="bottom" id="rdd-EM-i8v"/>
+                        <viewControllerLayoutGuide type="top" id="3LF-aL-ILb"/>
+                        <viewControllerLayoutGuide type="bottom" id="X65-Hv-hRs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jeg-0o-0ah">
+                    <view key="view" contentMode="scaleToFill" id="wV7-cc-B4A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Установить время круга" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smh-MC-p4w">
-                                <rect key="frame" x="16" y="124" width="343" height="20"/>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Минуты" placeholder="Минуты" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xa7-Xw-CjR">
-                                <rect key="frame" x="16" y="184" width="343" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J65-3q-UXj">
+                                <rect key="frame" x="54" y="154" width="266" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="66k-pa-i2a"/>
+                                    <constraint firstAttribute="height" constant="50" id="BKw-yU-SLv"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Секунды" placeholder="Секунды" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XH4-vu-pku">
-                                <rect key="frame" x="16" y="244" width="343" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ke-Tm-geY">
+                                <rect key="frame" x="143" y="329" width="88" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UPC-sF-0J0"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ciw-yR-HCo"/>
+                                    <constraint firstAttribute="width" constant="88" id="tmV-69-0oC"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6e-Lp-iEO">
-                                <rect key="frame" x="91" y="488" width="193" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="phw-iI-oXd"/>
-                                    <constraint firstAttribute="width" constant="193" id="zIG-NS-KUr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Сохранить"/>
+                                <state key="normal" title="Сохранить">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="saveSetting:" destination="MsT-WO-lQF" eventType="touchUpInside" id="j7u-7S-fC6"/>
+                                    <action selector="saveTimePressed:" destination="3jT-VG-nh2" eventType="touchUpInside" id="GJK-Le-2qa"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3a3-sv-YPW">
+                                <rect key="frame" x="54" y="239" width="266" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="73Y-wm-rWw"/>
+                                    <constraint firstAttribute="height" constant="50" id="Rq3-oU-eZp"/>
+                                    <constraint firstAttribute="width" constant="266" id="qEr-jD-DJy"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="smh-MC-p4w" firstAttribute="top" secondItem="beS-Cs-Y2v" secondAttribute="bottom" constant="60" id="2iy-xA-52o"/>
-                            <constraint firstItem="smh-MC-p4w" firstAttribute="trailing" secondItem="jeg-0o-0ah" secondAttribute="trailingMargin" id="4Kg-Sy-6jw"/>
-                            <constraint firstItem="rdd-EM-i8v" firstAttribute="top" secondItem="a6e-Lp-iEO" secondAttribute="bottom" constant="137" id="Dhx-PH-cV6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a6e-Lp-iEO" secondAttribute="trailing" constant="75" id="Fhs-Z2-kUR"/>
-                            <constraint firstItem="a6e-Lp-iEO" firstAttribute="leading" secondItem="jeg-0o-0ah" secondAttribute="leadingMargin" constant="75" id="P9D-fq-t8m"/>
-                            <constraint firstAttribute="trailing" secondItem="Xa7-Xw-CjR" secondAttribute="trailing" constant="16" id="Y6c-WM-xFo"/>
-                            <constraint firstItem="Xa7-Xw-CjR" firstAttribute="leading" secondItem="jeg-0o-0ah" secondAttribute="leading" constant="16" id="fW3-Zz-9t1"/>
-                            <constraint firstItem="smh-MC-p4w" firstAttribute="leading" secondItem="jeg-0o-0ah" secondAttribute="leadingMargin" id="i5L-WP-dDe"/>
-                            <constraint firstItem="XH4-vu-pku" firstAttribute="trailing" secondItem="jeg-0o-0ah" secondAttribute="trailingMargin" id="kWZ-Ix-WDB"/>
-                            <constraint firstItem="XH4-vu-pku" firstAttribute="top" secondItem="Xa7-Xw-CjR" secondAttribute="bottom" constant="10" id="kYE-uu-1Fg"/>
-                            <constraint firstItem="Xa7-Xw-CjR" firstAttribute="top" secondItem="smh-MC-p4w" secondAttribute="bottom" constant="40" id="mWC-dU-hZH"/>
-                            <constraint firstItem="XH4-vu-pku" firstAttribute="leading" secondItem="jeg-0o-0ah" secondAttribute="leadingMargin" id="zcX-AE-QWs"/>
+                            <constraint firstItem="J65-3q-UXj" firstAttribute="leading" secondItem="wV7-cc-B4A" secondAttribute="leadingMargin" constant="38" id="2Y4-g9-Q8F"/>
+                            <constraint firstItem="2Ke-Tm-geY" firstAttribute="top" secondItem="3a3-sv-YPW" secondAttribute="bottom" constant="40" id="DRC-rf-kQP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J65-3q-UXj" secondAttribute="trailing" constant="39" id="Fo5-zp-52r"/>
+                            <constraint firstItem="2Ke-Tm-geY" firstAttribute="centerX" secondItem="wV7-cc-B4A" secondAttribute="centerX" id="Ka5-su-4Q3"/>
+                            <constraint firstItem="J65-3q-UXj" firstAttribute="top" secondItem="3LF-aL-ILb" secondAttribute="bottom" constant="90" id="RdA-FN-NlH"/>
+                            <constraint firstItem="3a3-sv-YPW" firstAttribute="leading" secondItem="wV7-cc-B4A" secondAttribute="leadingMargin" constant="38" id="SWO-aC-OBJ"/>
+                            <constraint firstItem="3a3-sv-YPW" firstAttribute="top" secondItem="J65-3q-UXj" secondAttribute="bottom" constant="35" id="bKm-gu-Y84"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3a3-sv-YPW" secondAttribute="trailing" constant="39" id="xTA-G1-nEC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="91Y-jj-uMg">
+                        <barButtonItem key="leftBarButtonItem" title="Отменить" id="XJf-NI-HOR">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="p1s-dM-4IY" kind="unwind" identifier="returnToTimer" unwindAction="returnTimerScreenWithSegue:" id="6Fy-gd-cqo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="minutesTextField" destination="Xa7-Xw-CjR" id="n2o-Pq-6Pj"/>
-                        <outlet property="secindTextField" destination="XH4-vu-pku" id="yLU-5J-wDM"/>
+                        <outlet property="minutesTextField" destination="J65-3q-UXj" id="qrU-2T-861"/>
+                        <outlet property="secondsTextField" destination="3a3-sv-YPW" id="xhc-Fo-S9r"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fSd-tg-EM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jfb-Rg-6iv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="p1s-dM-4IY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2824.8000000000002" y="138.98050974512745"/>
         </scene>
         <!--LapsTVC-->
         <scene sceneID="RSf-CW-ap5">
@@ -252,7 +254,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fIB-6p-mNJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iDR-qO-c3b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iDR-qO-c3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -264,6 +266,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9er-Cs-fn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EiW-Sa-roP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fi-gl-Gir" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HBO-SB-e2q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3jT-VG-nh2" kind="relationship" relationship="rootViewController" id="zYm-ii-CxA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lB1-ed-Bs7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1885.5999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
     <resources>

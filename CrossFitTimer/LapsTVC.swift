@@ -12,7 +12,7 @@ class LapsTVC: UITableViewController, ViewControllerDelegate {
 	
 	@IBOutlet var lapsTable: UITableView!
 	
-	var time = TimeTimer()
+	//var time = TimeTimer()
 	
 	var viewController: ViewController? {
 		didSet {

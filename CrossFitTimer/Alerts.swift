@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
 	func alertController() {
-		let alert = UIAlertController(title: "Поздравляю", message: "Тренировка законченна", preferredStyle: .alert)
+		let alert = UIAlertController(title: "Поздравляю!", message: "Тренировка законченна", preferredStyle: .alert)
 		let actionButton = UIAlertAction(title: "Я справился!", style: .default, handler: nil)
 		alert.addAction(actionButton)
 		present(alert, animated: true, completion: nil)

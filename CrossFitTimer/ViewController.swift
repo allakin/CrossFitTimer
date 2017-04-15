@@ -28,9 +28,10 @@ class ViewController: UIViewController {
 	var player: AVAudioPlayer!
 	var lapsTVC: LapsTVC!
 	var timer = Timer()
-	var time = TimeTimer()
 	var model = TimerModel()
 	var lapsTime: [String] = []
+	var minutes: Int = 0
+	var seconds: Int = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,12 +55,15 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 	
+	@IBAction func returnTimerScreen(segue: UIStoryboardSegue) {
+	}
+	
 	//MARK: - startStopButton
 	
 	@IBAction func startStopButton(_ sender: Any) {
 		
 		if model.startStopWatch == true {
-			//player.play()
+			player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			model.startStopWatch = false
 			startStopButton.setImage(UIImage.stopTimer().withRenderingMode(.alwaysOriginal), for: .normal)
@@ -126,9 +130,9 @@ class ViewController: UIViewController {
 		} else if model.seconds == 60 {
 			model.minutes += 1
 			model.seconds = 0
-		} else if model.minutes == time.min && model.seconds == time.sec{
-			print("\(time.min)-viewcontroller <------------------")
-			print("\(time.sec)-viewcontroller<------------------")
+		} else if model.minutes == minutes && model.seconds == seconds{
+			print("\(minutes)-viewcontroller <------------------")
+			print("\(seconds)-viewcontroller<------------------")
 			player.stop()
 			player.currentTime = 0
 			player.play()
