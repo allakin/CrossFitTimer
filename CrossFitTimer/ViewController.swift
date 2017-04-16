@@ -132,7 +132,7 @@ class ViewController: UIViewController {
 			model.seconds = 0
 		} else if model.minutes == minutes && model.seconds == seconds{
 			print("\(minutes)-viewcontroller <------------------")
-			print("\(seconds)-viewcontroller<------------------")
+			print("\(seconds)-viewcontroller <------------------")
 			player.stop()
 			player.currentTime = 0
 			player.play()

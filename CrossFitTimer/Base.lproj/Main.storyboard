@@ -187,7 +187,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.92549019607843142" blue="0.70196078431372544" alpha="0.8967672413793103" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="J65-3q-UXj" firstAttribute="leading" secondItem="wV7-cc-B4A" secondAttribute="leadingMargin" constant="38" id="2Y4-g9-Q8F"/>
                             <constraint firstItem="2Ke-Tm-geY" firstAttribute="top" secondItem="3a3-sv-YPW" secondAttribute="bottom" constant="40" id="DRC-rf-kQP"/>
@@ -254,7 +254,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fIB-6p-mNJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iDR-qO-c3b">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iDR-qO-c3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -272,7 +272,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Fi-gl-Gir" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HBO-SB-e2q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HBO-SB-e2q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
