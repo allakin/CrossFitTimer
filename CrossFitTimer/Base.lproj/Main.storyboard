@@ -203,7 +203,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Отменить" id="XJf-NI-HOR">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="p1s-dM-4IY" kind="unwind" identifier="returnToTimer" unwindAction="returnTimerScreenWithSegue:" id="6Fy-gd-cqo"/>
+                                <segue destination="p1s-dM-4IY" kind="unwind" identifier="returnToTimer" unwindAction="returnTimerScreenWithSegue:" id="Jbm-n5-n0h"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

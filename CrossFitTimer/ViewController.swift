@@ -35,7 +35,9 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		stopWatchLabel.text = "00:00:00"
+		
 		yellow()
 		// Change the navigation bar background color to blue.
 		navigationController!.navigationBar.barTintColor = UIColor.yellowTextColor
@@ -62,6 +64,14 @@ class ViewController: UIViewController {
 	
 	@IBAction func startStopButton(_ sender: Any) {
 		
+		if stopWatchLabel.text == "00:00:00" {
+			let alert = UIAlertController(title: "Ошибка", message: "Вы не установили время таймера", preferredStyle: .alert)
+			let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+			alert.addAction(okAction)
+			present(alert, animated: true, completion: nil)
+			model.startStopWatch = false
+		}
+		
 		if model.startStopWatch == true {
 			player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
@@ -70,7 +80,7 @@ class ViewController: UIViewController {
 			lapResetButton.setImage(UIImage.newLapsTimer().withRenderingMode(.alwaysOriginal), for: .normal)
 			model.addLap = true
 			navigationController!.navigationBar.barTintColor = UIColor.greenTextColor
-			subTittleLabel.text = "Тренировка"
+			//subTittleLabel.text = "Тренировка"
 			green()
 		} else {
 			player.stop()

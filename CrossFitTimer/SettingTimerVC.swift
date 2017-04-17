@@ -12,8 +12,8 @@ class SettingTimerVC: UIViewController {
 	@IBOutlet weak var minutesTextField: UITextField!
 	@IBOutlet weak var secondsTextField: UITextField!
 	
-	var minutes: String = ""
-	var seconds: String = ""
+	var minutes: String = "0"
+	var seconds: String = "1"
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -56,11 +56,14 @@ class SettingTimerVC: UIViewController {
 		}
 	}
 	
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "returnToTimer"{
 			let settingDestiation = segue.destination as! ViewController
 			settingDestiation.minutes = Int(minutes)!
 			settingDestiation.seconds = Int(seconds)!
+			settingDestiation.subTittleLabel.text = "Время круга: \(minutes):\(seconds):00"
+			settingDestiation.stopWatchLabel.text = "\(minutes):\(seconds):00"
 		}
 	}
 
