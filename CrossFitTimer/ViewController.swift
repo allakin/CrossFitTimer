@@ -65,9 +65,13 @@ class ViewController: UIViewController {
 	@IBAction func startStopButton(_ sender: Any) {
 		
 		if stopWatchLabel.text == "00:00:00" {
-			let alert = UIAlertController(title: "Ошибка", message: "Вы не установили время таймера", preferredStyle: .alert)
-			let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+			let alert = UIAlertController(title: "Ошибка!", message: "Вы не установили время таймера.", preferredStyle: .alert)
+			let okAction = UIAlertAction(title: "Установить", style: .default, handler: { (action: UIAlertAction) -> Void in
+				self.performSegue(withIdentifier: "settingLaps", sender: self)
+			})
+			let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
 			alert.addAction(okAction)
+			alert.addAction(cancelAction)
 			present(alert, animated: true, completion: nil)
 			model.startStopWatch = false
 		}

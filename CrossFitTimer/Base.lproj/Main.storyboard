@@ -187,7 +187,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.96470588235294119" green="0.92549019607843142" blue="0.70196078431372544" alpha="0.8967672413793103" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.92549019607843142" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="J65-3q-UXj" firstAttribute="leading" secondItem="wV7-cc-B4A" secondAttribute="leadingMargin" constant="38" id="2Y4-g9-Q8F"/>
                             <constraint firstItem="2Ke-Tm-geY" firstAttribute="top" secondItem="3a3-sv-YPW" secondAttribute="bottom" constant="40" id="DRC-rf-kQP"/>
