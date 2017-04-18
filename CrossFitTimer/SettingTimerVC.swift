@@ -36,7 +36,11 @@ class SettingTimerVC: UIViewController {
 		
 		if (minutesTextField.text?.characters.count)! > 2 {
 			error = "минут"
-		} else if (secondsTextField.text?.characters.count)! > 2 {
+		} else if (secondsTextField.text?.characters.count)! > 2{
+			error = "секунд"
+		} else if Int(minutesTextField.text!)! >= 61 {
+			error = "минут"
+		} else if Int(secondsTextField.text!)! >= 61 {
 			error = "секунд"
 		}
 		

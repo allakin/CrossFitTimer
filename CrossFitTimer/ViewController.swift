@@ -77,7 +77,7 @@ class ViewController: UIViewController {
 		}
 		
 		if model.startStopWatch == true {
-			player.play()
+			//player.play()
 			timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateStopWatch), userInfo: nil, repeats: true)
 			model.startStopWatch = false
 			startStopButton.setImage(UIImage.stopTimer().withRenderingMode(.alwaysOriginal), for: .normal)
