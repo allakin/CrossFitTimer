@@ -34,6 +34,10 @@ class SettingTimerVC: UIViewController {
 			error = "секунд"
 		}
 		
+		func ads () {
+		
+		}
+		
 		if (minutesTextField.text?.characters.count)! > 2 {
 			error = "минут"
 		} else if (secondsTextField.text?.characters.count)! > 2{

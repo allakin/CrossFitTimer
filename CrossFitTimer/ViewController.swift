@@ -141,9 +141,6 @@ class ViewController: UIViewController {
 		} else if model.seconds == 60 {
 			model.minutes += 1
 			model.seconds = 0
-		} else if model.seconds == 60 {
-			model.minutes += 1
-			model.seconds = 0
 		} else if model.minutes == minutes && model.seconds == seconds{
 			print("\(minutes)-viewcontroller <------------------")
 			print("\(seconds)-viewcontroller <------------------")
